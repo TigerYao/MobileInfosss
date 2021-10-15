@@ -28,6 +28,7 @@ class MobleInfoUtils {
       IosDeviceInfo iosInfo = await deviceInfo.iosInfo;
       _entity.os = "IOS";
       _entity.os_version = iosInfo.systemVersion;
+      print("${_readIosDeviceInfo(iosInfo)}");
     }
     PackageInfo packageInfo = await PackageInfo.fromPlatform();
     _entity.app_version = packageInfo.version;
@@ -79,4 +80,20 @@ class MobleInfoUtils {
     };
   }
 
+  Map<String, dynamic> _readIosDeviceInfo(IosDeviceInfo data) {
+    return <String, dynamic>{
+      'name': data.name,
+      'systemName': data.systemName,
+      'systemVersion': data.systemVersion,
+      'model': data.model,
+      'localizedModel': data.localizedModel,
+      'identifierForVendor': data.identifierForVendor,
+      'isPhysicalDevice': data.isPhysicalDevice,
+      'utsname.sysname:': data.utsname.sysname,
+      'utsname.nodename:': data.utsname.nodename,
+      'utsname.release:': data.utsname.release,
+      'utsname.version:': data.utsname.version,
+      'utsname.machine:': data.utsname.machine,
+    };
+  }
 }
