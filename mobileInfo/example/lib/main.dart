@@ -88,8 +88,8 @@ class _MyHomePageState extends State<MyHomePage> {
               title: Text(entity?.os??""),
             ),
             ListTile(
-              leading: Text("ios版本："),
-              title: Text(entity?.ios_version??""),
+              leading: Text("系统版本："),
+              title: Text(entity?.os_version??""),
             ),
             ListTile(
               leading: Text("app版本："),

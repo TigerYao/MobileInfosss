@@ -1,6 +1,6 @@
 class MobileInfoEntity{
 	String? os;
-	String? ios_version;
+	String? os_version;
 	String? app_version;
 	String? net_type;
 	String? ip;
@@ -8,11 +8,11 @@ class MobileInfoEntity{
 	MobileInfoEntity();
 
 	MobileInfoEntity.fromJson(Map<String, dynamic> json) {
-		if (json['os'] != null) {
-			this.os = json['os'].toString();
+		if (json['system'] != null) {
+			this.os = json['system'].toString();
 		}
-		if (json['ios_version'] != null) {
-			this.ios_version = json['ios_version'].toString();
+		if (json['system_version'] != null) {
+			this.os_version = json['system_version'].toString();
 		}
 		if (json['app_version'] != null) {
 			this.app_version = json['app_version'].toString();
@@ -23,15 +23,12 @@ class MobileInfoEntity{
 		if (json['ip'] != null) {
 			this.ip = json['ip'].toString();
 		}
-		if (json['interest'] != null) {
-			this.interest = json['interest'].toString();
-		}
 	}
 
 	Map<String, dynamic> toJson() {
 		final Map<String, dynamic> data = new Map<String, dynamic>();
-		data['os'] = this.os;
-		data['ios_version'] = this.ios_version;
+		data['system'] = this.os;
+		data['system_version'] = this.os_version;
 		data['app_version'] = this.app_version;
 		data['net_type'] = this.net_type;
 		data['ip'] = this.ip;
